@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Hanin 💕</title>
+
+<meta property="og:title" content="For Hanin 💕">
+<meta property="og:description" content="I’m sorry… do you still love me? 💔">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+body{
+margin:0;
+height:100vh;
+overflow:hidden;
+background:#fff5f7;
+font-family:Arial;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+h1{
+font-size:26px;
+margin-bottom:10px;
+}
+
+h2{
+font-weight:normal;
+margin-bottom:30px;
+}
+
+button{
+padding:10px 25px;
+font-size:16px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+.yes{
+background:#ff4d6d;
+color:white;
+}
+
+.yes:hover{
+transform:scale(1.1);
+}
+
+.no{
+background:#ccc;
+position:absolute;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+from{transform:translateY(-10vh);}
+to{transform:translateY(110vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>💌 I’m sorry… but I have to ask you something.</h1>
+<h2>💖 Hanin, do you still love me?</h2>
+
+<button class="yes" onclick="alert('I love you more than anything 💕')">Yes 💝</button>
+<button class="no" id="noBtn">No 😅</button>
+
+<script>
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover",()=>{
+noBtn.style.top=Math.random()*window.innerHeight+"px";
+noBtn.style.left=Math.random()*window.innerWidth+"px";
+});
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},5000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
